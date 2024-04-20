@@ -1,0 +1,66 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+html{
+    font-size:10px;
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration:none;
+}
+.container{
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+p{
+    color: black;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: 0.05rem;
+}
+.section-title span{
+    color:lightskyblue;
+}
+#main{
+    background-image:url(87270.jpg);
+    background-size:cover;
+    background-position:top center;
+    position:re…
+[3:26 PM, 4/16/2024] Manasa Malyavantham: const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+const header = document.querySelector('.header.container');
+
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('active');
+	mobile_menu.classList.toggle('active');
+});
+
+document.addEventListener('scroll', () => {
+	var scroll_position = window.scrollY;
+	if (scroll_position > 250) {
+		header.style.backgroundColor = '#29323c';
+	} else {
+		header.style.backgroundColor = 'transparent';
+	}
+});
+
+menu_item.forEach((item) => {
+	item.addEventListener('click', () => {
+		hamburger.classList.toggle('active');
+		mobile_menu.classList.toggle('active');
+	});
+});
