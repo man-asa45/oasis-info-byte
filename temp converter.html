@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>
+            Temp conv
+        </title>
+        <style>
+            #op{
+                color:rgb(15, 220, 35);
+                font-size:20;
+                background-color: white;
+            }
+            #po{
+                color:rgb(222, 21, 38);
+                font-size:20;
+                background-color:white;
+            }
+            #c{
+                color:rgb(63, 8, 245);
+                font-size:20;
+                background-color:white;
+
+            }
+            #cone{
+                
+                font-size:30;
+                color:white;;
+                width:150px;
+                height:90px;
+                background-color: blue;
+            }
+
+        </style>
+    </head>
+    <body style="background-image:url('https://thumbs.dreamstime.com/z/weather-forecast-concept-air-temperature-termometer-cloud-lightening-sun-rainy-clouds-yellow-background-weather-118173735.jpg');background-repeat: no-repeat;background-size: cover;background-repeat: no-repeat;">
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <h1 style="color:rgb(57, 31, 144);text-align:center">Temperature converter by manasa manu</h1>
+        <center>
+        <form style="font-size:30;color:rgb(238, 10, 116)">
+            <label>Enter Degrees</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Select Type</label><br><br>
+            <input type="text" name="t" id="po"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+            <select id="op" >
+                <option>
+                   Fahrenheit
+                </option>
+                <option >
+                    Celsius
+                </option>
+               </select><br><br><br>
+            <label>Result</label><br><br>
+            <input type="text" name="p" value="result" id="c" size="30" /><br>
+        </center>
+           <center> <input type="button" value="Convert" id="cone" onclick="tempcon()"/></center>
+        </form>
+        <script>
+            function tempcon(){
+                var t=document.getElementById('po').value
+                var f=document.getElementById('op').value
+                if(Number.isNaN(t)==true){ 
+                    document.write("<h4>Not able to convert</h4>")
+                }
+                if(Number.isNaN(t)==false){ 
+                if(f=='Fahrenheit'){
+                    p=parseFloat((t-32)/1.8)
+                    p=p.toString()
+                    s='C'
+                    document.getElementById('c').value=p+'°'+s
+                }
+
+                else{
+                    p=parseFloat((t*1.8)+32)
+                    p=p.toString()
+                    document.getElementById('c').value=p+'°'+'F'
+                }
+            }
+                
+            }
+            
+        </script>
+        <center>
+<h2>Thank you for using </h2>
+</center>
+    </body>
+</html>
